@@ -19,7 +19,7 @@ public class JsonplaceholderTestGET {
     private final String BASE_URL = "https://jsonplaceholder.typicode.com/posts";
 
     @Test
-    public void GetAllPosts()
+    public void getAllPosts()
     {
         Response response = given()
                 .when()
@@ -37,7 +37,7 @@ public class JsonplaceholderTestGET {
     }
 
     @Test
-    public void GetPostByIdAsPathParam()
+    public void getPostByIdAsPathParam()
     {
         Response response = given()
                 .when()
@@ -57,7 +57,7 @@ public class JsonplaceholderTestGET {
     }
 
     @Test
-    public void GetPostByTitleAsQueryParam()
+    public void getPostByTitleAsQueryParam()
     {
         String param = "nesciunt quas odio";
 

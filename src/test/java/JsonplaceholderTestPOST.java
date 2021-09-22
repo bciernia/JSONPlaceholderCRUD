@@ -16,7 +16,7 @@ public class JsonplaceholderTestPOST {
     private final String BASE_URL = "https://jsonplaceholder.typicode.com/posts";
 
     @Test
-    public void AddNewPost()
+    public void addNewPost()
     {
         JSONObject newPost = new JSONObject();
 

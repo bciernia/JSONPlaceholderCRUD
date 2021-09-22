@@ -26,14 +26,14 @@ public class JsonplaceholderTestPUTPATCH {
     private String fakeDescription;
 
     @BeforeAll
-    public static void BeforeAll()
+    public static void beforeAll()
     {
         faker = new Faker();
 
     }
 
     @BeforeEach
-    public void BeforeEach()
+    public void beforeEach()
     {
         fakeUserId = faker.number().numberBetween(1, 10);
         fakeTitle = faker.name().title();
@@ -43,7 +43,7 @@ public class JsonplaceholderTestPUTPATCH {
     }
 
     @Test
-    public void UpdatePost()
+    public void updatePost()
     {
         updatedPost.put("userId", fakeUserId);
         updatedPost.put("title", fakeTitle);
@@ -68,7 +68,7 @@ public class JsonplaceholderTestPUTPATCH {
     }
 
     @Test
-    public void UpdateTitleInPost()
+    public void updateTitleInPost()
     {
         updatedPost.put("title", fakeTitle);
 

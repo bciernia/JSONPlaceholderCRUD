@@ -1,11 +1,13 @@
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class JsonplaceholderEmailCheck {
 
@@ -13,7 +15,7 @@ public class JsonplaceholderEmailCheck {
     private boolean flag = false;
 
     @Test
-    public void IsAnyEmailEndedOnPLWithForLoop()
+    public void isAnyEmailEndedOnPLWithForLoop()
     {
         Response response = given()
                 .when()
@@ -31,18 +33,17 @@ public class JsonplaceholderEmailCheck {
         {
             if(emailList.get(i).endsWith(".pl"))
             {
-                System.out.println("There is email ended on .pl");
                 flag = true;
                 break;
             }
         }
 
-        if(!flag)
-            System.out.println("No email ends with \".pl\"");
+        assertEquals(false, flag);
+
     }
 
     @Test
-    public void IsAnyEmailEndedOnPLWithStream()
+    public void isAnyEmailEndedOnPLWithStream()
     {
         Response response = given()
                 .when()
@@ -58,10 +59,7 @@ public class JsonplaceholderEmailCheck {
 
         boolean flag = emailList.stream().anyMatch(name -> name.endsWith(".pl"));
 
-        if(!flag)
-            System.out.println("No email ends with \".pl\"");
-        else
-            System.out.println("There is email ended on .pl");
-    }
+        assertEquals(false, flag);
 
+    }
 }

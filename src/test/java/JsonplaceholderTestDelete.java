@@ -19,10 +19,8 @@ public class JsonplaceholderTestDelete {
     private static Faker faker;
 
     @Test
-    public void DeleteRandomPost()
+    public void deleteRandomPost()
     {
-        //POBIERAMY WSZYSTKIE POSTY ABY UZYSKAĆ ICH LICZBĘ, A NASTĘPNIE USUWAMY JEDEN Z NICH RANDOMOWY
-
         Response getNumberOfPosts = given()
                 .when()
                 .get(BASE_URL)
